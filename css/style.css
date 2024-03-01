@@ -9,13 +9,21 @@ body {
   font-family: 'Ubuntu', sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
-  line-height: 1.6; /* Odstęp pomiedzy zdaniami (y) dzielony po polowie*/
+  line-height: 1.6;
 }
 
 img {
   max-width: 100%;
   display: block;
 }
+
+.image-full {
+  max-height: 300px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 2em;
+}
+
 /* =================
 Typography
 ================= */
@@ -34,13 +42,6 @@ h1 {
   margin: 0;
 }
 
-.image-full {
-  max-height: 300px;
-  width: 100%;
-  object-fit: cover;
-  margin-bottom: 2em;
-}
-
 h3 {
   color: #1792d2;
 }
@@ -57,6 +58,7 @@ a:focus {
 strong {
   font-weight: 700;
 }
+
 /* h1 subtitle */
 .subtitle {
   font-weight: 700;
@@ -64,7 +66,6 @@ strong {
   font-size: 0.75rem;
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 0.13em;
 }
 
 .article-title {
@@ -81,7 +82,7 @@ strong {
   text-decoration: none;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .article-read-more:hover,
@@ -92,6 +93,22 @@ strong {
 
 .article-info {
   margin: 2em 0;
+}
+
+.widget-title,
+.widget-recent-post-title {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.widget-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.widget-recent-post-title {
+  color: #143774;
 }
 
 /* =================
@@ -125,6 +142,10 @@ footer {
 }
 
 @media (min-width: 675px) {
+  header {
+    text-align: left;
+  }
+
   .container-flex {
     flex-direction: row;
   }
@@ -157,9 +178,9 @@ nav a {
   text-decoration: none;
   color: #707070;
   font-weight: 700;
-  padding: 0.25em 0;
-  letter-spacing: 1px;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.25em 0;
 }
 
 nav a:hover,
@@ -194,70 +215,24 @@ nav a:focus {
 }
 
 .article-recent {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 7em;
+  margin-bottom: 2em;
 }
 
 .article-recent-main {
-  order: 2;
 }
 
 .article-recent-secondary {
-  order: 1;
 }
 
 @media (min-width: 675px) {
-  .article-recent {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .article-recent-main {
-    width: 65%;
-  }
-  .article-recent-secondary {
-    width: 30%;
-  }
-  .article-featured {
-    display: flex;
-    flex-direction: column;
-  }
-  .article-image {
-    order: -2;
-  }
-  .article-info {
-    order: -1;
-  }
-  .article-image {
-    width: 100%;
-    height: 110%;
-    object-fit: cover;
-  }
-  .article-recent:last-child img {
-    object-position: right;
-  }
 }
 
 /* widgets */
+
 .sidebar-widget {
-  padding: 1em;
-  border: #f8f8f8 solid 1em;
+  border: 20px solid #efefef;
   margin-bottom: 2em;
-  font-size: 1rem;
-  color: #707070;
-  line-height: 1.4;
-}
-
-.widget-title,
-.widget-recent-post-title {
-  font-size: 1rem;
-  color: #143774;
-}
-
-.widget-title {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: 700;
-  letter-spacing: 2px;
+  padding: 1em;
 }
 
 .widget-recent-post {
@@ -272,6 +247,6 @@ nav a:focus {
   margin: 0;
 }
 
-.widget-recent-post img {
+.widget-image {
   order: -1;
 }
